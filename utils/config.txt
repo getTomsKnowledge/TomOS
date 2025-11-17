@@ -1,0 +1,19 @@
+"unit" : "token",
+"chunk_size" : 768,
+"overlap" : 96,
+"split_order" : {
+    "description" : "An array containing the hierarchy of acceptable splits.",
+    "type" : "array",
+    "contents" : {
+	"heading", "paragraph", "sentence", "tokens"
+    },
+"min_chunk_tokens" : 80,
+"normalize" : "lower"
+"metadata" : {
+    "description" : "",
+    "type" : "array",
+    "contents" : {
+        "doc_id","title","section","page","start_token","end_token"
+    },
+"dedupe" = 
+"language_hints" : "EN","ES","AR"

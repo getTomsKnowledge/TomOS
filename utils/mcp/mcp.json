@@ -1,0 +1,20 @@
+{
+    "servers": {
+        "mcp": {
+            "type": "http",
+            "version": "2025-06-18",
+            "url": "https://mcp.mojang.com/"            
+        }
+    },
+    "inputs": [
+        {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+                "type": "string"
+            },
+            "description": "The version to get the mappings for, e.g. '1.20.1'"
+        }
+    ]
+}

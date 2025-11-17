@@ -1,0 +1,86 @@
+PS G:\My Drive\Desktop\Studies\Engineering\AI\TomOS\tomos\utils\mcp\mcp-client> python client.py --server "G:\My Drive\Desktop\Studies\Engineering\AI\TomOS\tomos\utils\mcp\weather\weather.py" --query "Give me a short forecast for 39.5, -76.7 and any active MD alerts."
+2025-10-13 09:51:19,956 DEBUG Using proactor: IocpProactor
+2025-10-13 09:51:19,956 DEBUG Running MCP client with query: Give me a short forecast for 39.5, -76.7 and any active MD alerts.
+
+2025-10-13 09:51:20,524 DEBUG Base URL is: None
+
+2025-10-13 09:51:20,524 DEBUG Server directory: G:\My Drive\Desktop\Studies\Engineering\AI\TomOS\tomos\utils\mcp\weather
+
+2025-10-13 09:51:20,524 DEBUG Starting MCP server with command: C:\Users\Tom W\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe ['G:\\My Drive\\Desktop\\Studies\\Engineering\\AI\\TomOS\\tomos\\utils\\mcp\\weather\\weather.py']
+Commands include: C:\Users\Tom W\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe
+
+
+2025-10-13 09:51:20,600 DEBUG Stdio server connection established.
+
+2025-10-13 09:51:22,222 DEBUG Stdio server handshake complete.
+
+2025-10-13 09:51:22,232 DEBUG Available tools: ['get_alerts', 'get_forecast']
+
+2025-10-13 09:51:22,232 DEBUG Using OpenAI model: gpt-4o-mini
+
+2025-10-13 09:51:22,585 DEBUG Request options: {'method': 'post', 'url': '/responses', 'files': None, 'idempotency_key': 'stainless-python-retry-aac93615-9154-4e1b-bc18-d53c2250efb2', 'json_data': {'input': [{'role': 'user', 'content': [{'type': 'input_text', 'text': 'Give me a short forecast for 39.5, -76.7 and any active MD alerts.'}]}], 'max_output_tokens': 800, 'model': 'gpt-4o-mini', 'tools': [{'type': 'function', 'name': 'get_alerts', 'description': 'Get weather alerts for a US state.\n\n    Args:\n        state: Two-letter US state code (e.g. CA, NY)\n    ', 'parameters': {'properties': {'state': {'title': 'State', 'type': 'string'}}, 'required': ['state'], 'title': 'get_alertsArguments', 'type': 'object'}}, {'type': 'function', 'name': 'get_forecast', 'description': 'Get weather forecast for a location.\n\n    Args:\n        latitude: Latitude of the location\n        longitude: Longitude of the location\n    ', 'parameters': {'properties': {'latitude': {'title': 'Latitude', 'type': 'number'}, 'longitude': {'title': 'Longitude', 'type': 'number'}}, 'required': ['latitude', 'longitude'], 'title': 'get_forecastArguments', 'type': 'object'}}]}}
+2025-10-13 09:51:22,744 DEBUG Sending HTTP Request: POST https://api.openai.com/v1/responses
+2025-10-13 09:51:22,745 DEBUG connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-10-13 09:51:22,808 DEBUG connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000194C6BAC710>
+2025-10-13 09:51:22,808 DEBUG start_tls.started ssl_context=<ssl.SSLContext object at 0x00000194C65CF4D0> server_hostname='api.openai.com' timeout=5.0
+2025-10-13 09:51:22,865 DEBUG start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000194C679ECF0>
+2025-10-13 09:51:22,865 DEBUG send_request_headers.started request=<Request [b'POST']>
+2025-10-13 09:51:22,865 DEBUG send_request_headers.complete
+2025-10-13 09:51:22,865 DEBUG send_request_body.started request=<Request [b'POST']>
+2025-10-13 09:51:22,865 DEBUG send_request_body.complete
+2025-10-13 09:51:22,865 DEBUG receive_response_headers.started request=<Request [b'POST']>
+2025-10-13 09:51:30,870 DEBUG receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 13 Oct 2025 13:51:30 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199642'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'107ms'), (b'openai-version', b'2020-10-01'), (b'openai-organization', b'personal-pdiv3b'), (b'openai-project', b'proj_lOErVMFveI9CqRX8TLiClWDb'), (b'x-request-id', b'req_0316efb0dab74ca0931b03909cdfa58c'), (b'openai-processing-ms', b'7478'), (b'x-envoy-upstream-service-time', b'7485'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=Ym90XIi6PbN38kMXWOJTWi4CFxy.SfVFQ3UOfHhL0ns-1760363490-1.0.1.1-cCO8fKQ5EQVwOzmkwTOfGNgYesj7k3sEWWmebJloHitn8hSpAKUe_2_wa4iO.Lwz0OCMUDpjcaK8WEavoYGXXGCricFcedQiJXyX5Rf2aq4; path=/; expires=Mon, 13-Oct-25 14:21:30 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=yYuiOY5LHTjO9riQjXMEgk90VhNoM5NugDjVgDOEqOc-1760363490643-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'98df4fb6ab260821-IAD'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-10-13 09:51:30,870 INFO HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-10-13 09:51:30,875 DEBUG receive_response_body.started request=<Request [b'POST']>
+2025-10-13 09:51:30,875 DEBUG receive_response_body.complete
+2025-10-13 09:51:30,875 DEBUG response_closed.started
+2025-10-13 09:51:30,875 DEBUG response_closed.complete
+2025-10-13 09:51:30,880 DEBUG HTTP Response: POST https://api.openai.com/v1/responses "200 OK" Headers([('date', 'Mon, 13 Oct 2025 13:51:30 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199642'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '107ms'), ('openai-version', '2020-10-01'), ('openai-organization', 'personal-pdiv3b'), ('openai-project', 'proj_lOErVMFveI9CqRX8TLiClWDb'), ('x-request-id', 'req_0316efb0dab74ca0931b03909cdfa58c'), ('openai-processing-ms', '7478'), ('x-envoy-upstream-service-time', '7485'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=Ym90XIi6PbN38kMXWOJTWi4CFxy.SfVFQ3UOfHhL0ns-1760363490-1.0.1.1-cCO8fKQ5EQVwOzmkwTOfGNgYesj7k3sEWWmebJloHitn8hSpAKUe_2_wa4iO.Lwz0OCMUDpjcaK8WEavoYGXXGCricFcedQiJXyX5Rf2aq4; path=/; expires=Mon, 13-Oct-25 14:21:30 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=yYuiOY5LHTjO9riQjXMEgk90VhNoM5NugDjVgDOEqOc-1760363490643-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '98df4fb6ab260821-IAD'), ('content-encoding', 'br'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-10-13 09:51:30,881 DEBUG request_id: req_0316efb0dab74ca0931b03909cdfa58c
+2025-10-13 09:51:30,962 DEBUG No output_text, instead printing output:
+
+ [ResponseFunctionToolCall(arguments='{"latitude":39.5,"longitude":-76.7}', call_id='call_2pEQ598zhKFE4wVnhkm6ZyE5', name='get_forecast', type='function_call', id='fc_074246da52a43ea20068ed03df4c648195b44ecf511eb43c72', status='completed'), ResponseFunctionToolCall(arguments='{"state":"MD"}', call_id='call_rLIoJghdv5DsZYrFUr8lrzHk', name='get_alerts', type='function_call', id='fc_074246da52a43ea20068ed03df78c481958a7df9966cff70f7', status='completed')]
+
+
+
+2025-10-13 09:51:39,726 DEBUG Appended tool result for get_forecast: [TextContent(type='text', text='\nColumbus Day:\nTemperature: 58°F\nWind: 17 mph N\nForecast: Rain likely. Cloudy, with a high near 58. North wind around 17 mph, with gusts as high as 29 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible.\n\n---\n\nTonight:\nTemperature: 52°F\nWind: 12 to 17 mph N\nForecast: A chance of rain. Cloudy, with a low around 52. North wind 12 to 17 mph, with gusts as high as 26 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible.\n\n---\n\nTuesday:\nTemperature: 69°F\nWind: 14 mph N\nForecast: A chance of rain before 8am. Partly sunny, with a high near 69. North wind around 14 mph, with gusts as high as 23 mph. Chance of precipitation is 30%.\n\n---\n\nTuesday Night:\nTemperature: 52°F\nWind: 7 to 12 mph N\nForecast: Mostly clear, with a low around 52. North wind 7 to 12 mph, with gusts as high as 21 mph.\n\n---\n\nWednesday:\nTemperature: 67°F\nWind: 8 to 14 mph N\nForecast: Sunny, with a high near 67. North wind 8 to 14 mph, with gusts as high as 22 mph.\n', annotations=None, meta=None)]
+
+[Tool get_forecast returned: 
+Columbus Day:
+Temperature: 58°F
+Wind: 17 mph N
+Forecast: Rain likely. Cloudy, with a high near 58. North wind around 17 mph, with gusts as high as 29 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible.
+
+---
+
+Tonight:
+Temperature: 52°F
+Wind: 12 to 17 mph N
+Forecast: A chance of rain. Cloudy, with a low around 52. North wind 12 to 17 mph, with gusts as high as 26 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible.
+
+---
+
+Tuesday:
+Temperature: 69°F
+Wind: 14 mph N
+Forecast: A chance of rain before 8am. Partly sunny, with a high near 69. North wind around 14 mph, with gusts as high as 23 mph. Chance of precipitation is 30%.
+
+---
+
+Tuesday Night:
+Temperature: 52°F
+Wind: 7 to 12 mph N
+Forecast: Mostly clear, with a low around 52. North wind 7 to 12 mph, with gusts as high as 21 mph.
+
+---
+
+Wednesday:
+Temperature: 67°F
+Wind: 8 to 14 mph N
+Forecast: Sunny, with a high near 67. North wind 8 to 14 mph, with gusts as high as 22 mph.
+]
+
+after 1 loops.
+
+2025-10-13 09:51:39,857 DEBUG close.started
+2025-10-13 09:51:39,858 DEBUG close.complete
